@@ -10,6 +10,7 @@
     height: 100vh;
     padding-top: 4%;
     padding-left: 10%;
+    padding-bottom: 4%;
     background: linear-gradient(135deg, #cf9aff, #95c0ff);
     color: #fff;
 }
@@ -52,9 +53,10 @@
     background: #fff;
     position: relative;
     border: none;
+    outline: none;
     border-radius: 10px;
     padding: 20px;
-    margin: 10px20px;
+    margin: 10px 20px;
 }
 
 .input-box img{
