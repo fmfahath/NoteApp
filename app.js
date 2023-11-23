@@ -1,19 +1,24 @@
-const createBtn = document.getElementsByClassName("btn");
-const notesContainer = document.getElementsByClassName("notes-container");
+
+const createBtn = document.querySelector(".btn");
+const notesContainer = document.querySelector(".notes-container");
 let notes = document.querySelectorAll(".input-box");
 
-showData();
+// -----------------------------------------------------------------------------------
+
+
 
 
 function saveData(){
-    localStorage.setItem("data", notesContainer[0].innerHTML);
+    localStorage.setItem("data", notesContainer.innerHTML);
 }
 
 function showData(){
-    notesContainer[0].innerHTML = localStorage.getItem("data");
+    // notesContainer[0].innerHTML = localStorage.getItem("data");
+    notesContainer.innerHTML = localStorage.getItem("data");
+
 }
 
-createBtn[0].addEventListener('click', ()=>{
+createBtn.addEventListener('click', ()=>{
     // console.log("hi");
 
     let inputBoxEle = document.createElement('p');
@@ -23,13 +28,14 @@ createBtn[0].addEventListener('click', ()=>{
     inputBoxEle.className = 'input-box';
     imgEle.src = "img/delete.png";
 
-    notesContainer[0].appendChild(inputBoxEle).appendChild(imgEle);
+    // notesContainer[0].appendChild(inputBoxEle).appendChild(imgEle);
+    notesContainer.appendChild(inputBoxEle).appendChild(imgEle);
 
     saveData();
 });
 
-notesContainer[0].addEventListener('click', (e)=>{
-    if(e.target.tagName === "IMG"){
+notesContainer.addEventListener('click', (e)=>{
+    if(e.target.tagName === "IMG"){8
         e.target.parentElement.remove();
         saveData();
     }
@@ -42,6 +48,7 @@ notesContainer[0].addEventListener('click', (e)=>{
     }
 });
 
+showData();
 
 
 
